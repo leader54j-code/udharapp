@@ -1,0 +1,24 @@
+# Backend API deployment. The persistent disk is required for SQLite and uploads.
+services:
+  - type: web
+    name: udhar-api
+    runtime: node
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        value: https://udhar-monstera-d631eb.netlify.app
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_PATH
+        value: /opt/render/project/src/storage/udhar.db
+      - key: UPLOAD_DIR
+        value: /opt/render/project/src/storage/uploads
+    disk:
+      name: udhar-data
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1
+

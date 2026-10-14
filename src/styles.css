@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base { * { box-sizing: border-box; } body { @apply m-0 bg-canvas font-sans text-ink antialiased; } button,a,input,select,textarea { -webkit-tap-highlight-color: transparent; } button,a { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2; } }
+@layer components {
+  .card { @apply rounded-2xl border border-slate-100 bg-white shadow-card; }
+  .input { @apply w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-ink outline-none transition placeholder:text-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-100; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm shadow-blue-200 transition hover:bg-primary-700; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-ink transition hover:bg-slate-50; }
+  .nav-button { @apply flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-semibold text-slate-500 transition hover:bg-slate-50 hover:text-ink; }
+  .avatar { @apply grid size-10 shrink-0 place-items-center rounded-xl bg-primary-100 text-xs font-extrabold text-primary-700; }
+  .eyebrow { @apply text-xs font-extrabold tracking-[.14em] text-primary-600; }
+  .page-title { @apply mt-1 text-3xl font-black tracking-tight text-ink; }
+  .page-subtitle { @apply mt-1 text-sm text-slate-500; }
+  .section-title { @apply text-base font-extrabold text-ink; }
+  .section-subtitle { @apply mt-1 text-xs text-slate-400; }
+  .metric-label { @apply mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400; }
+  .icon-button { @apply inline-grid size-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-primary-200 hover:bg-primary-50 hover:text-primary-600; }
+  .badge { @apply inline-flex rounded-full px-2.5 py-1 text-[10px] font-extrabold capitalize; }
+  .badge-blue { @apply bg-blue-50 text-blue-700; } .badge-green { @apply bg-emerald-50 text-emerald-700; } .badge-amber { @apply bg-amber-50 text-amber-700; }
+  .table-cell { @apply px-5 py-4; }
+  .feature-icon { @apply grid size-12 place-items-center rounded-2xl; }
+}

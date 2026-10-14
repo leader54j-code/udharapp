@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Client-side React Router routes must resolve to the Vite entry point.
+# Netlify Function custom routes (including /api/*) are evaluated separately.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
